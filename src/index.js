@@ -72,18 +72,31 @@
  * アロー関数 =>
  */
 
-//従来の関数
-const func1 = function (str) {
-  return str;
+//
+
+/**
+ * 分割代入
+ */
+
+//従来
+const myProfile = {
+  name: "Yuuichi",
+  age: "32"
 };
-console.log(func1("func1です"));
 
-//アロー関数 =>
-const func2 = (str) => {
-  return str;
-};
-console.log(func2("func2です"));
+const message1 = `名前${myProfile.name}。年齢${myProfile.age}歳`;
+console.log(message1);
 
-const func3 = (num1, num2) => num1 + num2;
+const { name, age } = myProfile;
+const message2 = `名前${name}。年齢${age}歳`;
+console.log(message2);
 
-console.log(func3(10, 20));
+//分割代入
+const myProfile = ["Yuuichi", 32];
+
+const message3 = `名前${myProfile[0]}。年齢${myProfile[1]}歳`;
+console.log(message3);
+
+const [name, age] = myProfile;
+const message4 = `名前${name}。年齢${age}歳`;
+console.log(message4);
