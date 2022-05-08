@@ -78,25 +78,34 @@
  * 分割代入
  */
 
-//従来
-const myProfile = {
-  name: "Yuuichi",
-  age: "32"
-};
+// //従来
+// const myProfile = {
+//   name: "Yuuichi",
+//   age: "32"
+// };
 
-const message1 = `名前${myProfile.name}。年齢${myProfile.age}歳`;
-console.log(message1);
+// const message1 = `名前${myProfile.name}。年齢${myProfile.age}歳`;
+// console.log(message1);
 
-const { name, age } = myProfile;
-const message2 = `名前${name}。年齢${age}歳`;
-console.log(message2);
+// const { name, age } = myProfile;
+// const message2 = `名前${name}。年齢${age}歳`;
+// console.log(message2);
 
-//分割代入
-const myProfile = ["Yuuichi", 32];
+// //分割代入
+// const myProfile = ["Yuuichi", 32];
 
-const message3 = `名前${myProfile[0]}。年齢${myProfile[1]}歳`;
-console.log(message3);
+// const message3 = `名前${myProfile[0]}。年齢${myProfile[1]}歳`;
+// console.log(message3);
 
-const [name, age] = myProfile;
-const message4 = `名前${name}。年齢${age}歳`;
-console.log(message4);
+// const [name, age] = myProfile;
+// const message4 = `名前${name}。年齢${age}歳`;
+// console.log(message4);
+
+/**
+ * デフォルト値,引数など
+ */
+
+const sayHello = (name = "ゲスト") => console.log(`こんにちは!${name}さん!`);
+sayHello();
+
+/** こんにちは!ゲストさん! */
