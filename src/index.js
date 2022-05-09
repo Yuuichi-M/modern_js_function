@@ -119,61 +119,94 @@
 mapやfilterを使った処理
  */
 
-//従来
-const nameArr = ["田中", "山田", "雄一"];
-for (let index = 0; index < nameArr.length; index++) {
-  console.log(`${index + 1}番目は${nameArr[index]}です`);
-}
+// //従来
+// const nameArr = ["田中", "山田", "雄一"];
+// for (let index = 0; index < nameArr.length; index++) {
+//   console.log(`${index + 1}番目は${nameArr[index]}です`);
+// }
 
-/** 
-1番目は田中です 
-2番目は山田です 
-3番目は雄一です 
-*/
+// /**
+// 1番目は田中です
+// 2番目は山田です
+// 3番目は雄一です
+// */
 
-//map 配列の値を順番に処理する
+// //map 配列の値を順番に処理する
 
-const nameArr2 = nameArr.map((name) => {
-  return name;
-});
-console.log(nameArr2);
+// const nameArr2 = nameArr.map((name) => {
+//   return name;
+// });
+// console.log(nameArr2);
+
+// /**
+//   (3) ["田中", "山田", "雄一"]
+//   */
+
+// // 短く書ける
+// nameArr.map((name, index) => console.log(`${index + 1}番目は${name}です`));
+
+// /**
+// 1番目は田中です
+// 2番目は山田です
+// 3番目は雄一です
+//  */
+
+// //filter ある条件と一致したものだけ抽出する
+
+// const numArr = [1, 2, 3, 4, 5];
+// const newNumArr = numArr.filter((num) => {
+//   return num % 2 === 1; //奇数の値を抽出
+// });
+// console.log(newNumArr);
+
+// /**
+// (3) [1, 3, 5]
+//  */
+
+// //mapの実践例
+// //雄一以外の名前に`さん`をつける
+// const newNameAll = nameArr.map((name) => {
+//   if (name === "雄一") {
+//     return name;
+//   } else {
+//     return `${name}さん`;
+//   }
+// });
+// console.log(newNameAll);
+
+// /**
+// 3) ["田中さん", "山田さん", "雄一"]
+//  */
 
 /**
-  (3) ["田中", "山田", "雄一"]
-  */
+三項演算子
+ */
+ある条件 ? 条件がtrueの時 : 条件がfalseの時;
+const vail1 = 1 > 0 ? "trueです" : "falseです";
+console.log(vail1);
 
-// 短く書ける
-nameArr.map((name, index) => console.log(`${index + 1}番目は${name}です`));
+実践的;
+toLocaleString(三桁カンマ区切りにして描画);
+const num = "1300";
+console.log(num.toLocaleString());
 
 /**
-1番目は田中です 
-2番目は山田です 
-3番目は雄一です
+ * 1,300
  */
 
-//filter ある条件と一致したものだけ抽出する
-
-const numArr = [1, 2, 3, 4, 5];
-const newNumArr = numArr.filter((num) => {
-  return num % 2 === 1; //奇数の値を抽出
-});
-console.log(newNumArr);
+const formattedNum =
+  typeof num === "number" ? num.toLocaleString() : "数値を入力してください";
+console.log(formattedNum);
 
 /**
-(3) [1, 3, 5]
+ * 数値を入力してください
  */
 
-//mapの実践例
-//雄一以外の名前に`さん`をつける
-const newNameAll = nameArr.map((name) => {
-  if (name === "雄一") {
-    return name;
-  } else {
-    return `${name}さん`;
-  }
-});
-console.log(newNameAll);
+const checksum = (num1, num2) => {
+  return num1 + num2 > 100 ? "100を超えています" : "許容範囲内です";
+};
+console.log(checksum(50, 40));
 
 /**
-3) ["田中さん", "山田さん", "雄一"]
+ * 許容範囲内です
  */
