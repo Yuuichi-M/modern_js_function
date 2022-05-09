@@ -181,32 +181,65 @@ mapやfilterを使った処理
 /**
 三項演算子
  */
-ある条件 ? 条件がtrueの時 : 条件がfalseの時;
-const vail1 = 1 > 0 ? "trueです" : "falseです";
-console.log(vail1);
+// ある条件 ? 条件がtrueの時 : 条件がfalseの時;
+// const vail1 = 1 > 0 ? "trueです" : "falseです";
+// console.log(vail1);
 
-実践的;
-toLocaleString(三桁カンマ区切りにして描画);
-const num = "1300";
-console.log(num.toLocaleString());
+// 実践的;
+// toLocaleString(三桁カンマ区切りにして描画);
+// const num = "1300";
+// console.log(num.toLocaleString());
 
-/**
- * 1,300
+// /**
+//  * 1,300
+//  */
+
+// const formattedNum =
+//   typeof num === "number" ? num.toLocaleString() : "数値を入力してください";
+// console.log(formattedNum);
+
+// /**
+//  * 数値を入力してください
+//  */
+
+// const checksum = (num1, num2) => {
+//   return num1 + num2 > 100 ? "100を超えています" : "許容範囲内です";
+// };
+// console.log(checksum(50, 40));
+
+// /**
+//  * 許容範囲内です
+//  */
+
+/***
+ * 論理演算子の本当の意味を知ろう
  */
 
-const formattedNum =
-  typeof num === "number" ? num.toLocaleString() : "数値を入力してください";
-console.log(formattedNum);
+const flag1 = true;
+const flag2 = false;
+
+if (flag1 || flag2) {
+  console.log("1か2はtrueになります");
+}
+
+if (flag1 && flag2) {
+  console.log("1か2もtrueになります");
+}
+
+// ||　は左側がfalseなら右側を返す
+const num = null;
+const fee = num || "金額未設定です";
+console.log(fee);
 
 /**
- * 数値を入力してください
+ * 金額未設定です
  */
 
-const checksum = (num1, num2) => {
-  return num1 + num2 > 100 ? "100を超えています" : "許容範囲内です";
-};
-console.log(checksum(50, 40));
+// &&　左側がtrueなら右側を返す
+const num2 = 100;
+const fee2 = num2 && "何か設定されました";
+console.log(fee2);
 
 /**
- * 許容範囲内です
+ * 何か設定されました
  */
